@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
 }
 
 android {
@@ -26,6 +27,9 @@ android {
             )
         }
     }
+    buildFeatures {
+        dataBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -45,4 +49,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.retrofit)  // Retrofit core library
+    implementation(libs.converter.gson)  // Gson converter for Retrofit
+    implementation(libs.gson)  // Gson library for JSON parsing
+
+    implementation(libs.kotlinx.coroutines.android)  // viewModelScope
+    implementation(libs.androidx.lifecycle.viewmodel.ktx) // viewModelScope
 }
