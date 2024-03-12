@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{String.valueOf(weatherViewModel.weatherData)}"
+            android:text="@{weatherViewModel.weatherData}"
             android:visibility="@{weatherViewModel.weatherData != null ? View.VISIBLE : View.GONE}" />
 
     </LinearLayout>

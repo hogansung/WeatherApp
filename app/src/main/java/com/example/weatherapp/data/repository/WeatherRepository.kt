@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.time.Instant
 
 class WeatherRepository {
-    val gson = GsonBuilder()
+    private val gson = GsonBuilder()
         .registerTypeAdapter(Instant::class.java, JsonDeserializer { json, _, _ ->
             Instant.parse(json.asJsonPrimitive.asString)
         })
