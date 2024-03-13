@@ -1,8 +1,8 @@
-package com.example.weatherapp.data.repository
+package com.example.weatherapp.model.repository
 
 import android.util.Log
-import com.example.weatherapp.data.model.LocationWeather
-import com.example.weatherapp.data.service.WeatherService
+import com.example.weatherapp.model.data.LocationWeather
+import com.example.weatherapp.model.service.WeatherService
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonDeserializer
 import retrofit2.Retrofit
