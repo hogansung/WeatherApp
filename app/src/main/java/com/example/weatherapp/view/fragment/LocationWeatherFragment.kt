@@ -13,8 +13,6 @@ import com.example.weatherapp.viewmodel.LocationWeatherViewModel
 
 class LocationWeatherFragment(private val location: String) : Fragment() {
 
-    private lateinit var binding: FragmentLocationWeatherBinding
-
     private val locationWeatherViewModel: LocationWeatherViewModel by lazy {
         ViewModelProvider(this)[LocationWeatherViewModel::class.java]
     }
@@ -23,7 +21,7 @@ class LocationWeatherFragment(private val location: String) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding =
+        val binding: FragmentLocationWeatherBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_location_weather, container, false)
         binding.locationWeatherViewModel = locationWeatherViewModel
         locationWeatherViewModel.location.postValue(location)
